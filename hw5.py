@@ -8,7 +8,7 @@ import json
 
 def main(filename):
     # read file into lines
-    txtfile = open('i_have_a_dream.txt')
+    txtfile = open(filename)
     lines = txtfile.readlines()
 
     # declare a word list
@@ -33,7 +33,7 @@ def main(filename):
 
     # compute word count from all_words
     counter = Counter(all_words)
-    counter = counter.most_common()
+  
 
     # dump to a csv file named "wordcount.csv":
     # word,count
@@ -46,8 +46,8 @@ def main(filename):
         # write table head
         writer.writerow(['word', 'count'])
         # write all (word, count) pair into the csv writer
-        for word,count in counter:
-             writer.writerow([word,count])
+        for word in counter:
+             writer.writerow([word,cunter(word)])
 
     # dump to a json file named "wordcount.json"
     f = open('wordcount.json','w')
