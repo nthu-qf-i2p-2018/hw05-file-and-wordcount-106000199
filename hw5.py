@@ -47,7 +47,7 @@ def main(filename):
         writer.writerow(['word', 'count'])
         # write all (word, count) pair into the csv writer
         for word in counter:
-             writer.writerow([word,counter(word)])
+             writer.writerow([word,counter[word]])
 
     # dump to a json file named "wordcount.json"
     f = open('wordcount.json','w')
